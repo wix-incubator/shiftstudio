@@ -1,33 +1,53 @@
 # Shift Studio
 
-A high-energy training studio booking site showing live service selection, availability, scheduling, and confirmation flows powered by Wix Headless.
+Shift Studio is a high-energy fitness booking site for class discovery, live availability, time slot selection, member details, booking creation, and confirmation flows.
 
 This website is powered by Wix Headless and built using [wix-headless.dev](https://www.wix-headless.dev).
 
-## Live Site
+## Links
 
-- [https://shift-stud-bd78e1dc-gonenj.wix-site-host.com](https://shift-stud-bd78e1dc-gonenj.wix-site-host.com)
-
-## Source
-
-- [https://github.com/wix-incubator/shiftstudio](https://github.com/wix-incubator/shiftstudio)
+- Live site: [https://shift-stud-bd78e1dc-gonenj.wix-site-host.com](https://shift-stud-bd78e1dc-gonenj.wix-site-host.com)
+- Source: [https://github.com/wix-incubator/shiftstudio](https://github.com/wix-incubator/shiftstudio)
+- Wix site ID: `00cf9cae-9576-4233-9c9f-0a42a7b09ca9`
 
 ## What It Showcases
 
-- Bookings experience built as a custom headless website
-- Wix-managed backend capabilities surfaced through a custom Astro front end
-- Public `llms.txt` and `robots.txt` configured through the Wix SEO txt APIs
-- Deployment with `wix release`
+- A custom Astro class booking journey backed by Wix Bookings.
+- Service discovery, availability lookup, and class slot selection.
+- Booking creation from a custom front end.
+- Paid class/session handoff through Wix eCommerce checkout.
+- Redirect handling for checkout and confirmation flows.
+- Public `robots.txt` and `llms.txt` configured through Wix SEO txt APIs.
+- Deployment with `wix release`.
+
+## Wix Solutions Used
+
+- Wix Headless Site for the managed site/runtime foundation.
+- Wix Bookings for classes, services, availability, and booking creation.
+- Wix eCommerce for paid session checkout.
+- Wix Redirects for checkout/confirmation redirects.
+
+## Wix SDKs And Packages
+
+- `@wix/astro`
+- `@wix/astro-pages`
+- `@wix/sdk`
+- `@wix/bookings`
+- `@wix/ecom`
+- `@wix/redirects`
 
 ## Local Development
 
+Create a local env file from `.env.example` or run the Wix CLI env setup for the connected site.
+
 ```bash
-yarn install
-yarn dev
+npm install
+npm run dev
 ```
 
-## Build
+## Build And Release
 
 ```bash
-yarn build
+npm run build
+npm run release
 ```
