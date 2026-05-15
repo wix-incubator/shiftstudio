@@ -1,13 +1,33 @@
-# Wix Astro Scheduler Template
+# Shift Studio
 
-Our Astro templates are still in development and subject to change.
+A high-energy training studio booking site showing live service selection, availability, scheduling, and confirmation flows powered by Wix Headless.
 
-To use a template, follow the [Wix CLI for Headless Quick Start](https://dev.wix.com/docs/go-headless/develop-your-project/wix-managed-headless/get-started/quick-start), and select the desired template during the setup process.
+This website is powered by Wix Headless and built using [wix-headless.dev](https://www.wix-headless.dev).
 
-## Need help?
+## Live Site
 
-For documentation and support, check out:
+- [https://shift-stud-bd78e1dc-gonenj.wix-site-host.com](https://shift-stud-bd78e1dc-gonenj.wix-site-host.com)
 
-- [Wix Headless Documentation](https://dev.wix.com/docs/go-headless)
-- [Wix SDK Documentation](https://dev.wix.com/docs/sdk)
-- [Community on Discord](https://discord.gg/n6TBrSnYTp)
+## Source
+
+- [https://github.com/wix-incubator/shiftstudio](https://github.com/wix-incubator/shiftstudio)
+
+## What It Showcases
+
+- Bookings experience built as a custom headless website
+- Wix-managed backend capabilities surfaced through a custom Astro front end
+- Public `llms.txt` and `robots.txt` configured through the Wix SEO txt APIs
+- Deployment with `wix release`
+
+## Local Development
+
+```bash
+yarn install
+yarn dev
+```
+
+## Build
+
+```bash
+yarn build
+```

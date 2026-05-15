@@ -11,25 +11,33 @@ const { class: className = '' } = Astro.props;
 <div class={className}>
   <Panel>
     <div class="flex flex-col space-y-4">
-      <h3 class="text-base font-medium">Session Type</h3>
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-black uppercase tracking-wide text-primary">Choose your lane</p>
+          <h3 class="mt-1 text-xl font-black">Session Type</h3>
+        </div>
+        <span class="rounded-lg bg-zinc-950 px-3 py-1 text-xs font-black uppercase text-white">Step 1</span>
+      </div>
       
       <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
         <button 
           id="free-session-btn" 
-          class="flex-1 p-4 border rounded-lg bg-white hover:bg-primary/5 transition-colors cursor-pointer session-type-active"
+          class="flex-1 rounded-lg border bg-white p-4 text-left transition-all hover:-translate-y-0.5 hover:bg-primary/5 cursor-pointer session-type-active"
           data-session-type="free"
         >
-          <h4 class="font-medium mb-1">Intro Assessment</h4>
-          <p class="text-sm text-muted-foreground">30-minute movement screen</p>
+          <span class="mb-3 inline-flex rounded-md bg-secondary px-2 py-1 text-xs font-black uppercase text-zinc-950">No-fee</span>
+          <h4 class="font-black mb-1">Intro Assessment</h4>
+          <p class="text-sm leading-5 text-muted-foreground">30-minute movement screen with direct confirmation.</p>
         </button>
         
         <button 
           id="premium-session-btn" 
-          class="flex-1 p-4 border rounded-lg bg-white hover:bg-primary/5 transition-colors cursor-pointer"
+          class="flex-1 rounded-lg border bg-white p-4 text-left transition-all hover:-translate-y-0.5 hover:bg-primary/5 cursor-pointer"
           data-session-type="premium"
         >
-          <h4 class="font-medium mb-1">Performance Session</h4>
-          <p class="text-sm text-muted-foreground">60-minute coached training block</p>
+          <span class="mb-3 inline-flex rounded-md bg-zinc-950 px-2 py-1 text-xs font-black uppercase text-white">Checkout</span>
+          <h4 class="font-black mb-1">Performance Session</h4>
+          <p class="text-sm leading-5 text-muted-foreground">60-minute coached training block with paid booking flow.</p>
         </button>
       </div>
     </div>
@@ -81,8 +89,8 @@ const { class: className = '' } = Astro.props;
     style.textContent = `
       .session-type-active {
         border-color: var(--color-primary) !important;
-        background-color: rgba(var(--color-primary-rgb), 0.05) !important;
-        box-shadow: 0 0 0 1px var(--color-primary);
+        background: color-mix(in srgb, var(--color-primary) 8%, white) !important;
+        box-shadow: 0 0 0 1px var(--color-primary), 8px 8px 0 color-mix(in srgb, var(--color-secondary) 88%, white);
       }
     `;
     document.head.appendChild(style);

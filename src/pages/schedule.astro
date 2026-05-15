@@ -22,28 +22,37 @@ import { BUSINESS_NAME } from "../utils/constants";
 
       <section class="shift-schedule-header mb-8 animate-fade-up">
         <div>
-          <p class="mb-4 text-sm font-black uppercase tracking-wide text-secondary">Shift booking desk</p>
+          <p class="mb-4 text-sm font-black uppercase tracking-wide text-secondary">Shift booking desk / live Wix inventory</p>
           <h1 class="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">
             Choose a session and lock the next training window.
           </h1>
         </div>
-        <p class="max-w-2xl text-base leading-7 text-white/70">
-          Wix Headless pulls service type, availability, and checkout behavior into this branded scheduler, so an intro assessment and a paid performance block can share one fast booking path.
-        </p>
+        <div class="space-y-4">
+          <p class="max-w-2xl text-base leading-7 text-white/70">
+            Wix Headless pulls service type, availability, and checkout behavior into this branded scheduler, so an intro assessment and a paid performance block can share one fast booking path.
+          </p>
+          <div class="shift-schedule-pulse">
+            <span></span>
+            <strong>Availability refreshes from Wix Bookings after every date or service change.</strong>
+          </div>
+        </div>
       </section>
 
       <div class="mb-8 grid gap-3 sm:grid-cols-3 animate-fade-up delay-100">
-        <div class="rounded-lg bg-white p-4 shadow-xs">
-          <p class="text-xs font-black uppercase text-zinc-500">Step 1</p>
-          <p class="mt-1 font-bold">Pick session type</p>
+        <div class="shift-step-card">
+          <p>Step 1</p>
+          <strong>Pick session type</strong>
+          <span>No-fee intro or paid performance block.</span>
         </div>
-        <div class="rounded-lg bg-white p-4 shadow-xs">
-          <p class="text-xs font-black uppercase text-zinc-500">Step 2</p>
-          <p class="mt-1 font-bold">Choose live availability</p>
+        <div class="shift-step-card">
+          <p>Step 2</p>
+          <strong>Choose live availability</strong>
+          <span>Slots are queried from Wix for the selected service.</span>
         </div>
-        <div class="rounded-lg bg-white p-4 shadow-xs">
-          <p class="text-xs font-black uppercase text-zinc-500">Step 3</p>
-          <p class="mt-1 font-bold">Confirm with {BUSINESS_NAME}</p>
+        <div class="shift-step-card">
+          <p>Step 3</p>
+          <strong>Confirm with {BUSINESS_NAME}</strong>
+          <span>Confirm free bookings or move into checkout.</span>
         </div>
       </div>
 
@@ -51,7 +60,7 @@ import { BUSINESS_NAME } from "../utils/constants";
         <SessionType />
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="shift-scheduler-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="animate-fade-up delay-200">
           <DatePicker />
         </div>

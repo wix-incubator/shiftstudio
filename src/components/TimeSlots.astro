@@ -13,7 +13,7 @@ const { class: className = "" } = Astro.props;
 
 <div id="time-slots-container" class={className}>
   <Panel padding="md" isEmptyState={true}>
-    <EmptyState icon="clock" message="Please select a date first" />
+    <EmptyState icon="clock" message="Pick a date to check live training slots" />
   </Panel>
 </div>
 
@@ -112,9 +112,9 @@ const { class: className = "" } = Astro.props;
       const message = createElement(
         "p",
         {
-          className: "text-sm text-muted-foreground",
+          className: "text-sm font-medium text-muted-foreground",
         },
-        "Please select a date first"
+        "Pick a date to check live training slots"
       );
 
       // Assemble panel
@@ -132,12 +132,20 @@ const { class: className = "" } = Astro.props;
     const header = createElement(
       "h3",
       {
-        className: "text-base font-medium mb-4",
+        className: "text-lg font-black mb-1",
       },
-      `Available Times for ${formatDisplayDate(selectedDate)}`
+      "Live training slots"
+    );
+    const subheader = createElement(
+      "p",
+      {
+        className: "mb-4 text-sm text-muted-foreground",
+      },
+      `Wix availability for ${formatDisplayDate(selectedDate)}`
     );
 
     contentWrapper.appendChild(header);
+    contentWrapper.appendChild(subheader);
 
     if (isLoading) {
       // Add loading spinner
@@ -161,9 +169,9 @@ const { class: className = "" } = Astro.props;
       const loadingText = createElement(
         "span",
         {
-          className: "ml-2 text-sm text-muted-foreground",
+          className: "ml-2 text-sm font-medium text-muted-foreground",
         },
-        "Loading available slots..."
+        "Checking Wix availability..."
       );
 
       loadingWrapper.appendChild(spinner);
@@ -174,9 +182,9 @@ const { class: className = "" } = Astro.props;
       const emptyMessage = createElement(
         "p",
         {
-          className: "text-sm text-muted-foreground text-center py-4",
+          className: "rounded-lg border border-dashed border-primary/30 bg-secondary/40 px-4 py-6 text-center text-sm font-medium text-muted-foreground",
         },
-        "No available slots for this date"
+        "No bookable training windows for this date"
       );
 
       contentWrapper.appendChild(emptyMessage);
@@ -195,12 +203,13 @@ const { class: className = "" } = Astro.props;
           "w-full",
           "text-sm",
           "rounded-lg",
-          "transition-colors",
-          "py-2",
+          "font-black",
+          "transition-all",
+          "py-3",
           "px-3",
           "border",
-          "border-gray-200",
-          isSelected ? "bg-primary text-white" : "bg-white hover:bg-primary/10",
+          "border-zinc-200",
+          isSelected ? "bg-primary text-white shadow-[6px_6px_0_hsl(83_85%_88%)]" : "bg-white hover:-translate-y-0.5 hover:bg-primary/10",
           !slot.available ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
         ].join(" ");
 

@@ -13,7 +13,7 @@ const { class: className = "" } = Astro.props;
   <Panel isEmptyState={true}>
     <EmptyState
       icon="calendar"
-      message="Please select both a date and time to proceed with booking"
+      message="Choose a date and slot to unlock the booking form"
     />
   </Panel>
 </div>
@@ -95,9 +95,9 @@ const { class: className = "" } = Astro.props;
       const message = createElement(
         "p",
         {
-          className: "text-sm text-muted-foreground",
+          className: "text-sm font-medium text-muted-foreground",
         },
-        "Please select both a date and time to proceed with booking"
+        "Choose a date and slot to unlock the booking form"
       );
 
       emptyState.appendChild(icon);
@@ -114,19 +114,19 @@ const { class: className = "" } = Astro.props;
     const header = createElement(
       "h3",
       {
-        className: "text-base font-medium mb-4",
+        className: "text-lg font-black mb-4",
       },
-      "Complete Your Booking"
+      sessionType === "free" ? "Confirm your intro assessment" : "Continue to checkout"
     );
 
     const summary = createElement("div", {
-      className: "mb-6 p-3 bg-secondary/50 rounded-lg",
+      className: "mb-6 rounded-lg border border-primary/15 bg-secondary/60 p-4",
     });
 
     const dateInfo = createElement(
       "p",
       {
-        className: "text-sm font-medium",
+        className: "text-sm font-bold",
       },
       `<span class="text-muted-foreground">Date: </span>${formattedDate}`
     );
@@ -134,7 +134,7 @@ const { class: className = "" } = Astro.props;
     const timeInfo = createElement(
       "p",
       {
-        className: "text-sm font-medium",
+        className: "text-sm font-bold",
       },
       `<span class="text-muted-foreground">Time: </span>${formattedTime}`
     );
@@ -190,10 +190,10 @@ const { class: className = "" } = Astro.props;
         "button",
         {
           className:
-            "w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors",
+            "w-full rounded-lg bg-primary px-4 py-3 text-sm font-black uppercase tracking-wide text-white shadow-[0_12px_30px_rgba(227,22,71,0.24)] transition-all hover:-translate-y-0.5 hover:bg-primary/90",
           type: "submit",
         },
-        "Confirm Booking"
+        "Confirm Training Slot"
       );
 
       form.appendChild(nameField);
@@ -211,10 +211,10 @@ const { class: className = "" } = Astro.props;
         "button",
         {
           className:
-            "w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors",
+            "w-full rounded-lg bg-primary px-4 py-3 text-sm font-black uppercase tracking-wide text-white shadow-[0_12px_30px_rgba(227,22,71,0.24)] transition-all hover:-translate-y-0.5 hover:bg-primary/90",
           id: "checkout-button",
         },
-        "Checkout"
+        "Continue to Wix Checkout"
       );
 
       checkoutButton.addEventListener("click", handleCheckoutRedirect);
@@ -239,7 +239,7 @@ const { class: className = "" } = Astro.props;
     const labelElement = createElement(
       "label",
       {
-        className: "block text-sm font-medium mb-1",
+        className: "block text-sm font-bold mb-1",
         for: id,
       },
       label
@@ -253,7 +253,7 @@ const { class: className = "" } = Astro.props;
         name: id,
         placeholder,
         className:
-          "w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent",
+          "w-full rounded-md border border-zinc-300 px-3 py-2 shadow-xs transition-colors focus:border-transparent focus:outline-hidden focus:ring-2 focus:ring-primary",
       });
 
       if (required) {
@@ -268,7 +268,7 @@ const { class: className = "" } = Astro.props;
         name: id,
         placeholder,
         className:
-          "w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent",
+          "w-full rounded-md border border-zinc-300 px-3 py-2 shadow-xs transition-colors focus:border-transparent focus:outline-hidden focus:ring-2 focus:ring-primary",
       });
 
       if (required) {
@@ -315,7 +315,7 @@ const { class: className = "" } = Astro.props;
 
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = "Confirm Booking";
+        submitButton.textContent = "Confirm Training Slot";
       }
     }
   }
@@ -348,7 +348,7 @@ const { class: className = "" } = Astro.props;
 
       if (button) {
         button.disabled = false;
-        button.textContent = "Checkout";
+        button.textContent = "Continue to Wix Checkout";
       }
     }
   }

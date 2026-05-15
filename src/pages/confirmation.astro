@@ -10,97 +10,97 @@ import { BUSINESS_NAME } from "../utils/constants";
 ---
 
 <Layout>
-  <div class="min-h-screen">
+  <div class="min-h-screen bg-[#f7f8ef]">
     <Navbar />
 
-    <div class="max-w-3xl mx-auto pt-32 pb-16 px-4">
+    <div class="max-w-5xl mx-auto pt-32 pb-16 px-4">
       <div class="mb-6">
         <BackButton href="/" text="Back to Home" />
       </div>
 
-      <Panel padding="lg" class="text-center">
-        <div
-          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6 animate-scale-in"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-primary"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-        </div>
-
-        <div class="animate-fade-up">
-          <h1 class="text-3xl font-bold mb-4">Session Confirmed!</h1>
-        </div>
-
-        <div class="animate-fade-up delay-100">
-          <p class="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Your training session has been successfully scheduled with {
-              BUSINESS_NAME
-            }. We've sent a confirmation email to <span id="confirmation-email"
-              >your email</span
-            >.
-          </p>
-        </div>
-
-        <div id="appointment-details" class="animate-fade-up delay-200">
-          <div class="bg-secondary/40 p-6 rounded-lg mb-8 inline-block mx-auto">
-            <div class="flex items-center justify-center gap-3 mb-4">
-              <Icon name="calendar" class="text-primary" />
-              <span class="font-medium text-lg"> Session Details </span>
+      <Panel padding="none" class="overflow-hidden">
+        <div class="grid md:grid-cols-[0.9fr_1.1fr]">
+          <div class="bg-zinc-950 p-8 text-white md:p-10">
+            <div
+              class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-lg bg-primary text-white shadow-[8px_8px_0_hsl(83_85%_88%)] animate-scale-in"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
             </div>
 
-            <div class="text-left space-y-2">
-              <p>
-                <span class="text-muted-foreground">Name:</span>
-                <span id="confirmation-name">Your Name</span>
-              </p>
-              <p>
-                <span class="text-muted-foreground">Date:</span>
-                <span id="confirmation-date">Date</span>
-              </p>
-              <p>
-                <span class="text-muted-foreground">Time:</span>
-                <span id="confirmation-time">Time</span>
-              </p>
-              <p>
-                <span class="text-muted-foreground">Email:</span>
-                <span id="confirmation-email-details">Email</span>
-              </p>
-              <p>
-                <span class="text-muted-foreground">Phone:</span>
-                <span id="confirmation-phone">Phone</span>
-              </p>
-              <p id="confirmation-notes-container" class="hidden">
-                <span class="text-muted-foreground">Notes:</span>
-                <span id="confirmation-notes">Notes</span>
+            <div class="animate-fade-up">
+              <p class="text-sm font-black uppercase tracking-wide text-secondary">Booking confirmed</p>
+              <h1 class="mt-3 text-4xl font-black leading-tight md:text-5xl">Your training window is locked.</h1>
+            </div>
+
+            <div class="animate-fade-up delay-100">
+              <p class="mt-5 max-w-xl text-white/70">
+                Your session with {BUSINESS_NAME} is scheduled. We sent the confirmation to <span id="confirmation-email" class="font-bold text-white">your email</span>.
               </p>
             </div>
           </div>
-        </div>
 
-        <div class="animate-fade-up delay-300">
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/"
-              class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Return to Home
-            </a>
-            <a
-              href="/schedule"
-              class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Book Another Session
-            </a>
+          <div id="appointment-details" class="p-8 md:p-10 animate-fade-up delay-200">
+            <div class="mb-6 flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs font-black uppercase tracking-wide text-primary">Session Details</p>
+                <h2 class="mt-1 text-2xl font-black text-zinc-950">Ready for check-in</h2>
+              </div>
+              <Icon name="calendar" class="text-primary" />
+            </div>
+
+            <div class="grid gap-3 text-left">
+              <p class="shift-confirm-row">
+                <span>Name</span>
+                <strong id="confirmation-name">Your Name</strong>
+              </p>
+              <p class="shift-confirm-row">
+                <span>Date</span>
+                <strong id="confirmation-date">Date</strong>
+              </p>
+              <p class="shift-confirm-row">
+                <span>Time</span>
+                <strong id="confirmation-time">Time</strong>
+              </p>
+              <p class="shift-confirm-row">
+                <span>Email</span>
+                <strong id="confirmation-email-details">Email</strong>
+              </p>
+              <p class="shift-confirm-row">
+                <span>Phone</span>
+                <strong id="confirmation-phone">Phone</strong>
+              </p>
+              <p id="confirmation-notes-container" class="shift-confirm-row hidden">
+                <span>Notes</span>
+                <strong id="confirmation-notes">Notes</strong>
+              </p>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/"
+                class="inline-flex justify-center rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm font-bold text-zinc-950 transition-colors hover:border-primary hover:text-primary"
+              >
+                Return to Home
+              </a>
+              <a
+                href="/schedule"
+                class="inline-flex justify-center rounded-lg bg-primary px-4 py-3 text-sm font-black uppercase tracking-wide text-white transition-colors hover:bg-primary/90"
+              >
+                Book Another Session
+              </a>
+            </div>
           </div>
         </div>
       </Panel>

@@ -4,14 +4,17 @@ import { BUSINESS_NAME } from '../utils/constants';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="px-4 py-10 bg-zinc-950 text-white">
-  <div class="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<footer class="px-4 py-12 bg-zinc-950 text-white">
+  <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
     <div>
-      <p class="text-sm font-black uppercase tracking-wide">{BUSINESS_NAME}</p>
-      <p class="mt-1 text-sm text-white/60">Wix Headless booking for classes, consults, and paid performance sessions.</p>
+      <p class="text-sm font-black uppercase tracking-wide text-secondary">{BUSINESS_NAME}</p>
+      <p class="mt-2 max-w-xl text-sm leading-6 text-white/60">Wix Headless booking for classes, consults, paid performance sessions, and confirmation flows that keep the studio brand in motion.</p>
     </div>
-    <p class="text-sm text-white/60">
-      &copy; {currentYear} {BUSINESS_NAME}. Move with intent.
-    </p>
+    <div class="flex flex-col gap-2 text-sm text-white/60 sm:items-end">
+      <a class="text-white transition-colors hover:text-secondary" href="/schedule">Open scheduler</a>
+      <p>&copy; {currentYear} {BUSINESS_NAME}. Powered by Wix Headless.</p>
+      <a class="font-semibold text-white transition-colors hover:text-secondary" href="https://www.wix-headless.dev" target="_blank" rel="noreferrer">Built with wix-headless.dev</a>
+      <a class="font-semibold text-white transition-colors hover:text-secondary" href="https://github.com/wix-incubator/shiftstudio" target="_blank" rel="noreferrer">View source on GitHub</a>
+    </div>
   </div>
 </footer>
