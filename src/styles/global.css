@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
@@ -106,26 +106,26 @@
 @theme {
   --font-inter: Inter, sans-serif;
 
-  --color-border: hsl(240 5.9% 90%);
-  --color-input: hsl(240 5.9% 90%);
-  --color-ring: hsl(240 10% 3.9%);
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(240 10% 3.9%);
+  --color-border: hsl(348 18% 86%);
+  --color-input: hsl(348 18% 86%);
+  --color-ring: hsl(348 82% 48%);
+  --color-background: hsl(65 36% 95%);
+  --color-foreground: hsl(240 9% 9%);
 
-  --color-primary: hsl(212 82% 45%);
+  --color-primary: hsl(348 82% 48%);
   --color-primary-foreground: hsl(0 0% 100%);
 
-  --color-secondary: hsl(240 4.8% 95.9%);
-  --color-secondary-foreground: hsl(240 5.9% 10%);
+  --color-secondary: hsl(83 85% 88%);
+  --color-secondary-foreground: hsl(240 9% 9%);
 
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-destructive-foreground: hsl(0 0% 98%);
 
-  --color-muted: hsl(240 4.8% 95.9%);
-  --color-muted-foreground: hsl(240 3.8% 46.1%);
+  --color-muted: hsl(70 30% 92%);
+  --color-muted-foreground: hsl(240 5% 42%);
 
-  --color-accent: hsl(240 4.8% 96.9%);
-  --color-accent-foreground: hsl(240 5.9% 10%);
+  --color-accent: hsl(185 90% 42%);
+  --color-accent-foreground: hsl(240 9% 9%);
 
   --color-popover: hsl(0 0% 100%);
   --color-popover-foreground: hsl(240 10% 3.9%);
@@ -133,9 +133,9 @@
   --color-card: hsl(0 0% 100%);
   --color-card-foreground: hsl(240 10% 3.9%);
 
-  --radius-lg: 0.75rem;
-  --radius-md: calc(0.75rem - 2px);
-  --radius-sm: calc(0.75rem - 4px);
+  --radius-lg: 0.5rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -146,7 +146,7 @@
 
   --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 25px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 15px rgba(139, 92, 246, 0.3);
+  --shadow-glow: 0 0 15px rgba(227, 22, 71, 0.28);
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-subtle: linear-gradient(to right, var(--tw-gradient-stops));
@@ -155,27 +155,126 @@
 
 @layer utilities {
   .glass-panel {
-    background-color: rgb(255 255 255 / 0.7);
-    backdrop-filter: blur(16px);
-    border-radius: 1rem;
-    border: 1px solid rgb(255 255 255 / 0.2);
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    background-color: rgb(255 255 255 / 0.86);
+    backdrop-filter: blur(18px);
+    border-radius: 0.5rem;
+    border: 1px solid rgb(24 24 27 / 0.08);
+    box-shadow: 0 16px 45px rgb(24 24 27 / 0.08);
   }
 
   .glass-panel-dark {
     background-color: rgb(0 0 0 / 0.4);
     backdrop-filter: blur(16px);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     border: 1px solid rgb(255 255 255 / 0.1);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
 
   .brand-text {
-    color: hsl(212 82% 45%);
+    color: hsl(348 82% 48%);
   }
 
   .brand-bg {
-    background-color: hsl(212 82% 45%);
+    background-color: hsl(348 82% 48%);
+  }
+
+  .shift-hero {
+    background:
+      linear-gradient(124deg, rgb(247 248 239 / 0.92) 0%, rgb(247 248 239 / 0.92) 52%, rgb(227 22 71 / 0.14) 52%, rgb(227 22 71 / 0.14) 100%),
+      repeating-linear-gradient(135deg, rgb(24 24 27 / 0.08) 0 1px, transparent 1px 18px);
+  }
+
+  .shift-booking-visual {
+    position: relative;
+    isolation: isolate;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(24 24 27 / 0.12);
+    background: hsl(240 9% 9%);
+    box-shadow: 22px 22px 0 hsl(83 85% 88%);
+    color: white;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .shift-booking-visual::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    z-index: -1;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    transform: skewY(-3deg);
+  }
+
+  .shift-visual-header,
+  .shift-session-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .shift-visual-header {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.62);
+  }
+
+  .shift-session-row {
+    margin-top: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgb(255 255 255 / 0.08);
+    padding: 1rem;
+    font-weight: 800;
+  }
+
+  .shift-session-row.is-hot {
+    background: hsl(348 82% 48%);
+  }
+
+  .shift-session-row.is-accent {
+    color: hsl(240 9% 9%);
+    background: hsl(83 85% 88%);
+  }
+
+  .shift-meter {
+    overflow: hidden;
+    height: 0.75rem;
+    margin-top: 1.25rem;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.16);
+  }
+
+  .shift-meter span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, hsl(185 90% 42%), hsl(83 85% 88%));
+  }
+
+  .shift-booking-visual p {
+    margin-top: 1.25rem;
+    max-width: 28rem;
+    color: rgb(255 255 255 / 0.68);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .shift-schedule-header {
+    display: grid;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    background: hsl(240 9% 9%);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-shadow: inset 0 -8px 0 hsl(348 82% 48%);
+  }
+
+  @media (min-width: 768px) {
+    .shift-schedule-header {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: end;
+    }
   }
 
   .dark .glass-panel {
@@ -207,8 +306,8 @@
   }
 
   body {
-    background-color: hsl(0 0% 100%);
-    color: hsl(240 10% 3.9%);
+    background-color: hsl(65 36% 95%);
+    color: hsl(240 9% 9%);
     font-family: Inter, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -12,44 +12,39 @@ import { BUSINESS_NAME } from "../utils/constants";
 ---
 
 <Layout>
-  <div class="min-h-screen bg-linear-to-b from-white to-secondary/10">
+  <div class="min-h-screen bg-[#f7f8ef]">
     <Navbar />
 
-    <div class="max-w-7xl mx-auto pt-32 pb-16 px-4">
+    <div class="max-w-7xl mx-auto pt-28 pb-16 px-4 sm:px-6 lg:px-8">
       <div class="mb-6">
         <BackButton href="/" text="Back to Home" />
       </div>
 
-      <div class="text-center mb-8 animate-fade-up">
-        <div class="mx-auto mb-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-12 w-12 mx-auto text-primary"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
+      <section class="shift-schedule-header mb-8 animate-fade-up">
+        <div>
+          <p class="mb-4 text-sm font-black uppercase tracking-wide text-secondary">Shift booking desk</p>
+          <h1 class="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">
+            Choose a session and lock the next training window.
+          </h1>
         </div>
-        <h1
-          class="text-3xl md:text-4xl font-bold mb-2 bg-linear-to-r from-primary to-accent bg-clip-text text-transparent"
-        >
-          Schedule Your Appointment
-        </h1>
-      </div>
-
-      <div class="text-center animate-fade-up delay-100">
-        <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Select a date and time that works for you, and fill in your details to
-          complete the booking with {BUSINESS_NAME}.
+        <p class="max-w-2xl text-base leading-7 text-white/70">
+          Wix Headless pulls service type, availability, and checkout behavior into this branded scheduler, so an intro assessment and a paid performance block can share one fast booking path.
         </p>
+      </section>
+
+      <div class="mb-8 grid gap-3 sm:grid-cols-3 animate-fade-up delay-100">
+        <div class="rounded-lg bg-white p-4 shadow-xs">
+          <p class="text-xs font-black uppercase text-zinc-500">Step 1</p>
+          <p class="mt-1 font-bold">Pick session type</p>
+        </div>
+        <div class="rounded-lg bg-white p-4 shadow-xs">
+          <p class="text-xs font-black uppercase text-zinc-500">Step 2</p>
+          <p class="mt-1 font-bold">Choose live availability</p>
+        </div>
+        <div class="rounded-lg bg-white p-4 shadow-xs">
+          <p class="text-xs font-black uppercase text-zinc-500">Step 3</p>
+          <p class="mt-1 font-bold">Confirm with {BUSINESS_NAME}</p>
+        </div>
       </div>
 
       <div class="max-w-2xl mx-auto mb-8 animate-fade-up delay-100">
