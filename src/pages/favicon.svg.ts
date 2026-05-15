@@ -1,0 +1,14 @@
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#f7f8ef" />
+  <path d="M18 18h31L34 32h13L16 50l14-16H17l18-16H18Z" fill="#d9164f" />
+  <path d="M33 14h13L31 28h13L24 40l8-13H20l13-13Z" fill="#16bfd0" />
+  <path d="M12 12h40v40H12V12Z" fill="none" stroke="#171717" stroke-width="4" />
+</svg>`;
+
+export const GET = () =>
+  new Response(favicon, {
+    headers: {
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "Content-Type": "image/svg+xml; charset=utf-8",
+    },
+  });
