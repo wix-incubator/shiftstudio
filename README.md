@@ -6,7 +6,7 @@ This website is powered by Wix Headless and built using [wix-headless.dev](https
 
 ## Links
 
-- Live site: [https://shift-stud-bd78e1dc-gonenj.wix-site-host.com](https://shift-stud-bd78e1dc-gonenj.wix-site-host.com)
+- Live site: [https://shiftstudio.store/](https://shiftstudio.store/)
 - Source: [https://github.com/wix-incubator/shiftstudio](https://github.com/wix-incubator/shiftstudio)
 - Wix site ID: `00cf9cae-9576-4233-9c9f-0a42a7b09ca9`
 
